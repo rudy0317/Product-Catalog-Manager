@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormProduk</class>
+ <widget class="QWidget" name="FormProduk">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Product Catalog Manager</string>
+  </property>
+  <layout class="QVBoxLayout" name="mainLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabCRUD">
+      <attribute name="title">
+       <string>Produk</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="crudLayout">
+       <item>
+        <widget class="QLabel" name="label_judul">
+         <property name="text">
+          <string>&lt;h2&gt;PRODUCT CATALOG MANAGER&lt;/h2&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_kode">
+           <property name="text">
+            <string>Kode</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="input_kode"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_nama">
+           <property name="text">
+            <string>Nama Produk</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="input_nama"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_harga">
+           <property name="text">
+            <string>Harga</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QDoubleSpinBox" name="input_harga">
+           <property name="prefix">
+            <string>Rp </string>
+           </property>
+           <property name="maximum">
+            <double>9999999.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_stok">
+           <property name="text">
+            <string>Stok</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="input_stok"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_deskripsi">
+           <property name="text">
+            <string>Deskripsi</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QTextEdit" name="input_deskripsi"/>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_kategori">
+           <property name="text">
+            <string>Kategori</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QComboBox" name="input_kategori"/>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_status">
+           <property name="text">
+            <string>Status Aktif</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QCheckBox" name="input_status">
+           <property name="text">
+            <string>Aktif</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_foto">
+           <property name="text">
+            <string>Preview Foto</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <layout class="QHBoxLayout" name="fotoLayout">
+           <item>
+            <widget class="QLabel" name="preview_foto">
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::Box</enum>
+             </property>
+             <property name="scaledContents">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnUploadFoto">
+             <property name="text">
+              <string>Upload Foto</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="buttonLayout">
+         <item>
+          <widget class="QPushButton" name="btnHapus">
+           <property name="text">
+            <string>Hapus</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnSimpan">
+           <property name="text">
+            <string>Simpan</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnReset">
+           <property name="text">
+            <string>Batal</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="filterLayout">
+         <item>
+          <widget class="QLineEdit" name="input_search">
+           <property name="placeholderText">
+            <string>Cari nama / kode / deskripsi...</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="filter_kategori"/>
+         </item>
+         <item>
+          <widget class="QComboBox" name="filter_status"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="filter_harga_min">
+           <property name="placeholderText">
+            <string>Harga Min</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="filter_harga_max">
+           <property name="placeholderText">
+            <string>Harga Max</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnFilter">
+           <property name="text">
+            <string>Filter</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTableWidget" name="tableProduk"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tabStatistik">
+      <attribute name="title">
+       <string>Statistik</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="statistikLayout">
+       <item>
+        <widget class="QLabel" name="label_chart_judul">
+         <property name="text">
+          <string>&lt;h3&gt;Statistik Produk per Kategori&lt;/h3&gt;</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_total">
+         <property name="styleSheet">
+          <string>font-weight: bold;</string>
+         </property>
+         <property name="text">
+          <string>Total Produk: 0</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_aktif">
+         <property name="text">
+          <string>Produk Aktif: 0</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_nonaktif">
+         <property name="text">
+          <string>Produk Tidak Aktif: 0</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="chartWidget" native="true"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
