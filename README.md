@@ -1,75 +1,103 @@
-# Product Catalog Manager
+# Product Catalog Manager (Desktop App)
 
-Aplikasi desktop manajemen katalog produk untuk UMKM berbasis Python dan PyQt5.
+Aplikasi desktop manajemen katalog produk berbasis **Python (PyQt5)** untuk membantu UMKM mengelola data produk secara lokal.
 
-## 🧠 Deskripsi Singkat
+---
 
-Aplikasi ini membantu UMKM untuk mencatat, memantau, dan memfilter produk-produk mereka berdasarkan kategori, status, dan harga. Dibuat dengan fokus pada kemudahan penggunaan dan UI yang interaktif.
+## 📚 Fitur Utama
 
-## 🛠 Teknologi yang Digunakan
+* **CRUD Produk**: Tambah, edit, hapus, dan lihat produk
+* **Filter & Pencarian**: Berdasarkan nama, kategori, status, harga
+* **Upload Foto Produk**: Simpan dan tampilkan preview foto
+* **Statistik**: Visualisasi produk per kategori dalam bentuk chart
+* **Tampilan Multi-tab**: Form + Tabel & Statistik terpisah dalam tab
 
-* Python 3.11
-* PyQt5
-* SQLite
-* Qt Designer (untuk desain UI)
-* PyQtGraph (untuk visualisasi chart)
+---
 
-## 🎯 Fitur Utama
+## 🔧 Teknologi yang Digunakan
 
-* CRUD (Create, Read, Update, Delete) produk
-* Filter berdasarkan nama/kode/deskripsi/kategori/status/harga
-* Upload dan preview foto produk
-* Statistik jumlah produk aktif/tidak aktif
-* Chart visual jumlah produk per kategori
-* Multi-tab view: form produk dan tab statistik
-* Validasi form dan notifikasi sukses/gagal
+* Bahasa: Python 3.11
+* GUI: PyQt5
+* Chart: PyQtGraph
+* Database: SQLite3
+* Build: PyInstaller
 
-## 📦 Struktur Direktori
+---
+
+## 📂 Struktur Folder
 
 ```
-Product Catalog Manager/
+Product-Catalog-Manager/
 ├── app/
 │   └── logic.py
 ├── db/
 │   └── aap_store.db
+├── foto/
 ├── ui/
-│   └── main.ui
-├── foto/ (untuk simpan foto)
+│   └── form_produk.ui
 ├── main.py
+├── dist/
+│   └── main.exe  ← file hasil build
 ```
 
-## 💡 Peran AI dalam Proyek Ini
+---
 
-Selama proses pengembangan, AI digunakan untuk:
+## 🔧 Cara Menjalankan (Via Source Code)
 
-* Membantu mendesain struktur tabel database
-* Menulis fungsi-fungsi CRUD yang efisien
-* Membuat validasi form dan notifikasi
-* Mendesain layout antarmuka (XML)
-* Menyediakan feedback iteratif saat debugging
-
-## 🚀 Cara Menjalankan
-
-1. Install dependensi:
+1. Pastikan Python 3.11 terinstal
+2. Install dependency:
 
 ```bash
-pip install pyqt5 pyqtgraph
-pip install pyqt5
+pip install -r requirements.txt
 ```
 
-2. Jalankan aplikasi:
+3. Jalankan aplikasi:
 
 ```bash
 python main.py
 ```
 
-## 🔗 Link Terkait
+---
 
-* Aplikasi 
-## 🔽 Download
-File executable tersedia di [Google Drive](https://drive.google.com/drive/folders/1sNTCbz0L7oOs5Q-klmrqvt_xStOnJ04k?usp=sharing)
+## 🌐 Link Deployment
 
-Catatan: Aplikasi hanya untuk Windows, tidak berjalan di browser.
+> Karena aplikasi ini berbasis desktop, deployment dilakukan via link unduhan `.exe`:
+
+**Link Google Drive:** [Klik untuk unduh](https://drive.google.com/drive/folders/1sNTCbz0L7oOs5Q-klmrqvt_xStOnJ04k?usp=drive_link)
+
+---
+
+## 🔐 Akun Testing
+
+> Tidak dibutuhkan. Aplikasi ini tidak menggunakan login sistem.
+
+---
+
+## 📊 Preview Tampilan
+
+![Tampilan Aplikasi](screenshots/main_form.png)
+![Chart Statistik](screenshots/chart_view.png)
+
+---
+
+## 🚀 Build Menjadi .EXE (Opsional)
+
+```bash
+pyinstaller --onefile --windowed \
+  --add-data "ui/form_produk.ui;ui" \
+  --add-data "db/aap_store.db;db" \
+  --add-data "foto;foto" \
+  main.py
+```
+
+Output: `dist/main.exe`
+
+---
+
+## 🙌 Author
+
+* Nama: \[Rudy]
+* Capstone Project: Aplikasi Manajemen Produk UMKM
 
 
 ---
